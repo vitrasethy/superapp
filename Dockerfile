@@ -28,7 +28,7 @@ RUN sed 's_@php artisan package:discover_/bin/true_;' -i composer.json \
     && composer clear-cache
 
 # Copy and install Node dependencies
-COPY package*.json ./
+COPY package.json ./
 RUN npm ci --only=production && npm cache clean --force
 
 # Copy app source code
